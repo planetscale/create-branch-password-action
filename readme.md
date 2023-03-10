@@ -4,7 +4,7 @@ This GitHub Action can be used within your workflows to create new passwords for
 
 ## Prerequisites
 
-Before you can use this Action, you'll need to configure a service token that has permissions to create branches on your database. Refer to our docs on [how to create a service token](https://planetscale.com/docs/concepts/service-tokens) for more details. Once the service token has been created, the following repository secrets must also be set:
+Before you can use this Action, you'll need to configure a service token that has permission to create branches on your database. Refer to our docs on [how to create a service token](https://planetscale.com/docs/concepts/service-tokens) for more details. Once the service token has been created, the following repository secrets must also be set:
 
 - `PLANETSCALE_TOKEN_NAME`
 - `PLANETSCALE_TOKEN`
