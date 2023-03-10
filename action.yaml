@@ -1,0 +1,34 @@
+name: 'Create Database Password'
+description: 'Creates a password for a PlanetScale database.'
+inputs:
+  database_name:
+    description: 'The name of the database'
+    required: true
+  branch_name:
+    description: 'The name of the branch'
+    required: true
+  name:
+    description: 'The name of password'
+    required: true
+  org_name:
+    description: 'The name of the organization that owns the database'
+    required: true
+  role:
+    description: 'The role of the password. Allowed values are `reader`, `writer`, `readerwriter`, or `admin`. Defaults to `admin`.'
+    required: false
+outputs:
+  username:
+    description: 'The username to use for connecting to the branch.'
+  password:
+    description: 'The password to use for connecting to the branch.'
+  hostname:
+    description: 'The hostname for the branch.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.database_name }}
+    - ${{ inputs.branch_name }}
+    - ${{ inputs.name }}
+    - ${{ inputs.org_name }}
+    - ${{ inputs.role }}
