@@ -1,5 +1,8 @@
 name: 'Create Database Password'
 description: 'Creates a password for a PlanetScale database.'
+branding:
+  color: 'orange'
+  icon: 'database'
 inputs:
   database_name:
     description: 'The name of the database'
