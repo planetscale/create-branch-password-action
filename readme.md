@@ -6,8 +6,8 @@ This GitHub Action can be used within your workflows to create new passwords for
 
 Before you can use this Action, you'll need to configure a service token that has permission to create branches on your database. Refer to our docs on [how to create a service token](https://planetscale.com/docs/concepts/service-tokens) for more details. Once the service token has been created, the following repository secrets must also be set:
 
-- `PLANETSCALE_TOKEN_NAME`
-- `PLANETSCALE_TOKEN`
+- `PLANETSCALE_SERVICE_TOKEN_ID`
+- `PLANETSCALE_SERVICE_TOKEN_ID`
 
 These values will be used to authenticate to the PlanetScale service.
 
@@ -36,8 +36,8 @@ jobs:
           branch_name: main
           name: mynewpassword
         env:
-          PLANETSCALE_TOKEN_NAME: ${{ secrets.PLANETSCALE_TOKEN_NAME }}
-          PLANETSCALE_TOKEN: ${{ secrets.PLANETSCALE_TOKEN }}
+          PLANETSCALE_SERVICE_TOKEN_ID: ${{ secrets.PLANETSCALE_SERVICE_TOKEN_ID }}
+          PLANETSCALE_SERVICE_TOKEN_ID: ${{ secrets.PLANETSCALE_SERVICE_TOKEN_ID }}
       - name: Get the new credentials
         run: |
           echo "Hostname: ${{ steps.create_password.outputs.hostname }}" \

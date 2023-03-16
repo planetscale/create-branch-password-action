@@ -1,7 +1,6 @@
 #!/bin/sh -l
 
-command="pscale password create $1 $2 $3 --org $4 \
-  --service-token $PLANETSCALE_TOKEN --service-token-id $PLANETSCALE_TOKEN_NAME -f json"
+command="pscale password create $1 $2 $3 --org $4 -f json"
 
 if [ -n "$5" ];then
   command="$command --role $5"
