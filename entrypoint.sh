@@ -8,6 +8,11 @@ fi
 
 CMDOUT=$(eval $command)
 
+ret=$?
+if [ $ret -ne 0 ]; then
+  exit $ret
+fi
+
 username=$(jq -n "$CMDOUT" | jq '.username')
 password=$(jq -n "$CMDOUT" | jq '.plain_text')
 hostname=$(jq -n "$CMDOUT" | jq '.database_branch.access_host_url')
