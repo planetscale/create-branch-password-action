@@ -28,7 +28,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: Create a password
-        uses: planetscale/create-branch-password-action@v1
+        uses: planetscale/create-branch-password-action@v2
         id: create_password
         with:
           org_name: bmorrison-ps
