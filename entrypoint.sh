@@ -13,9 +13,9 @@ if [ $ret -ne 0 ]; then
   exit $ret
 fi
 
-username=$(jq -n "$CMDOUT" | jq '.username')
-password=$(jq -n "$CMDOUT" | jq '.plain_text')
-hostname=$(jq -n "$CMDOUT" | jq '.database_branch.access_host_url')
+username=$(jq -n "$CMDOUT" | jq -r '.username')
+password=$(jq -n "$CMDOUT" | jq -r '.plain_text')
+hostname=$(jq -n "$CMDOUT" | jq -r '.database_branch.access_host_url')
 echo "username=$username" >> $GITHUB_OUTPUT
 echo "password=$password" >> $GITHUB_OUTPUT
 echo "hostname=$hostname" >> $GITHUB_OUTPUT
