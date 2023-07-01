@@ -16,6 +16,8 @@ fi
 username=$(jq -n "$CMDOUT" | jq -r '.username')
 password=$(jq -n "$CMDOUT" | jq -r '.plain_text')
 hostname=$(jq -n "$CMDOUT" | jq -r '.database_branch.access_host_url')
+echo "::add-mask::$username"
+echo "::add-mask::$password"
 echo "username=$username" >> $GITHUB_OUTPUT
 echo "password=$password" >> $GITHUB_OUTPUT
 echo "hostname=$hostname" >> $GITHUB_OUTPUT
