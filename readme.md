@@ -1,4 +1,10 @@
-# Create Database Password Action
+**:warning: :warning:**
+
+**This Action has been replaced by [`setup-pscale-action`](https://github.com/planetscale/setup-pscale-action). Which is even faster! [Please see an example here](https://planetscale.com/docs/devops/github-actions#create-a-password-for-a-branch).**
+
+**:warning: :warning:**
+
+## Create Database Password Action
 
 This GitHub Action can be used within your workflows to create new passwords for your PlanetScale database.
 
